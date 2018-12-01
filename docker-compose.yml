@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  php:
+    build:
+      dockerfile: php.Dockerfile
+      context: .docker/local
+    volumes:
+      - .docker/data/composer:/root/.composer
+      - .:/var/www/html
+    env_file:
+      - .docker/local/local.env
